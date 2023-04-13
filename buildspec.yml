@@ -1,0 +1,23 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - echo installing phase ...
+      - java --version
+      - gradle --version
+  pre_build:
+    commands:
+      - echo pre build phase
+  build:
+    commands:
+      - gradle build
+  post_build:
+    commands:
+      - echo successfully done
+      - ls build/libs/
+
+artifacts:
+  files:
+    - build/libs/spring-web-server-0.0.1-SNAPSHOT.jar
+    - appspec.yml
+    - start.sh
